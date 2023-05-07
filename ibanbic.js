@@ -1,3 +1,11 @@
+/*==================================================================================================
+
+Application:   IBAN and BIC Utility Functions
+Author:        Alann Jaksnon
+E-mail:        fylosofo@gmail.com
+
+====================================================================================================*/
+ 
 /*
  * Returns 1 if the IBAN is valid 
  * Returns FALSE if the IBANs length is not as should be (for CY the IBAN Should be 28 chars long starting with CY )
@@ -53,11 +61,6 @@ function mod97(string) {
  */
 function validateBic(bic) {
     var value = bic.toUpperCase();
-    var bicpais = value.substr(4, 2);
-    // check country selected with bic country
-    if (paisenveu !== bicpais) {
-        return false;
-    }
 
     var pregbic = /^([A-Z]{6}[A-Z2-9][A-NP-Z1-9])(X{3}|[A-WY-Z0-9][A-Z0-9]{2})?$/;
     return pregbic.test(value);
